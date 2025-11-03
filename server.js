@@ -3,6 +3,7 @@ import cors from "cors";
 import { getDataBase } from "./db.js"; 
 import userRouter from "./router/userRouter.js"; 
 import adminRouter from "./router/AdminRouter.js"
+import courseRouter from "./router/CourseRouter.js"
 const app = express();
 const PORT = 3500;
 
@@ -16,6 +17,7 @@ app.use(cors());
 // Routes
 app.use("/api", userRouter);
 app.use("/api/admin",adminRouter);
+app.use("/api/addcourse",courseRouter)
 //  Start Server
 const startServer = async () => {
   try {
@@ -27,5 +29,5 @@ const startServer = async () => {
     console.error("❌ Failed to connect to database:", err.message);
   }
 };
-
+// 
 startServer();

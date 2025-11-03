@@ -1,12 +1,12 @@
 import mongoose from "mongoose";
 
-const htmlSchema = new mongoose.Schema({
+const cssSchema = new mongoose.Schema({
   title: { type: String, required: true },
   description: { type: String, required: true },
   points: [String],
   codeExample: { type: String, required: true },
   explanation: { type: String, required: true },
-  category: { type: String, default: "HTML" },
+  category: { type: String, default: "CSS" },
   level: {
     type: String,
     enum: ["beginner", "intermediate", "advanced"],
@@ -23,4 +23,4 @@ const htmlSchema = new mongoose.Schema({
   },
 });
 
-export default mongoose.model("HtmlTutorial", htmlSchema);
+export default mongoose.model("CssTutorial", cssSchema);
