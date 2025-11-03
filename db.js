@@ -1,13 +1,17 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export const getDataBase = async () => {
+  const uri = process.env.MONGO_URI;
+  if (!uri) throw new Error("Mongo URI not found in env");
+
   try {
-    await mongoose.connect(
-      "mongodb+srv://sibiraj_db:JByR728D4zdRe9X5@cluster0.pwhndgt.mongodb.net/ElearningDB?retryWrites=true&w=majority&appName=Cluster0"
-    );
-    console.log("✅ Database connected successfully");
+    await mongoose.connect(uri); // simplified
+    console.log("✅ Database connected!");
   } catch (error) {
     console.error("❌ Cannot connect to database:", error.message);
-    throw error; // So server.js can catch the error
+    throw error; // server knows DB failed
   }
 };
