@@ -4,6 +4,7 @@ import { getDataBase } from "./db.js";
 import userRouter from "./router/userRouter.js"; 
 import adminRouter from "./router/AdminRouter.js"
 import courseRouter from "./router/CourseRouter.js"
+import quizRouter from "./router/quizRouter.js"
 const app = express();
 const PORT = 3500;
 
@@ -17,7 +18,10 @@ app.use(cors());
 // Routes
 app.use("/api", userRouter);
 app.use("/api/admin",adminRouter);
-app.use("/api/addcourse",courseRouter)
+app.use("/api/add/quiz",quizRouter);
+app.use("/api/addcourse",courseRouter);
+
+
 //  Start Server
 const startServer = async () => {
   try {
