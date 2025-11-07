@@ -12,7 +12,7 @@ import { Add_Node_lesson, GetNodeLesson } from "../controller/nodeController.js"
 router.post('/course/html',addNewCourse);
 router.post('/course/css' , Add_Css_lesson);
 router.post('/course/js' , Add_Js_lesson);
-router.post('/course/mongo',Add_Mongo_lesson);
+router.post('/course/mongodb',Add_Mongo_lesson);
 router.post('/course/express',Add_Express_lesson);
 router.post('/course/react', Add_React_lesson);
 router.post('/course/node', Add_Node_lesson);
@@ -20,7 +20,7 @@ router.post('/course/node', Add_Node_lesson);
 router.get("/course/html/lessons/maxorder" , GetMaxOrderInHTML)
 router.get("/course/css/lessons/maxorder" , GetMaxOrderInCSS)
 router.get("/course/javascript/lessons/maxorder" , GetMaxOrderInJS)
-router.get("/course/mongo/lessons/maxorder" , GetMaxOrderInMONGO)
+router.get("/course/mongodb/lessons/maxorder" , GetMaxOrderInMONGO)
 router.get("/course/express/lessons/maxorder" , GetMaxOrderInEXPRESS)
 router.get("/course/react/lessons/maxorder" , GetMaxOrderInREACT)
 router.get("/course/node/lessons/maxorder" , GetMaxOrderInNode)
@@ -28,7 +28,7 @@ router.get("/course/node/lessons/maxorder" , GetMaxOrderInNode)
 router.get("/course/html/lessons/:order",GetHtmlLesson);
 router.get("/course/css/lessons/:order",GetCssLesson);
 router.get("/course/javascript/lessons/:order",GetJsLesson);
-router.get("/course/mongo/lessons/:order", GetMongoLesson);
+router.get("/course/mongodb/lessons/:order", GetMongoLesson);
 router.get("/course/express/lessons/:order", GetExpressLesson);
 router.get("/course/react/lessons/:order", GetReactLesson);
 router.get("/course/node/lessons/:order", GetNodeLesson);

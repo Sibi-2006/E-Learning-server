@@ -76,3 +76,29 @@ export const loginUser = async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 };
+
+export const GetOneUser = async (req, res) => {
+  try {
+    const { userId } = req.params;
+
+    if (!userId) {
+      return res.status(400).json({ message: "User ID is required." });
+    }
+
+    // 🛡️ Exclude password using `.select("-password")`
+    const user = await User.findById(userId).select("-password");
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found." });
+    }
+
+    res.status(200).json({
+      message: "User found successfully",
+      user,
+    });
+
+  } catch (err) {
+    console.error("Error fetching user:", err);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
