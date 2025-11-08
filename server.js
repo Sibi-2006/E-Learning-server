@@ -6,7 +6,8 @@ import adminRouter from "./router/AdminRouter.js"
 import courseRouter from "./router/CourseRouter.js"
 import quizRouter from "./router/quizRouter.js"
 const app = express();
-const PORT = 3500;
+const PORT = process.env.PORT || 3500;
+
 
 // Middleware
 app.use(express.json());
